@@ -24,9 +24,9 @@ let initList = function() {
     );
 }
 
-//initList();
+initList();
 
-$.ajax({
+/*$.ajax({
     // copy Your bin identifier here. It can be obtained in the dashboard
     url: 'https://api.jsonbin.io/v3/b/6349050d0e6a79321e27f4b4',
     type: 'GET',
@@ -40,7 +40,7 @@ $.ajax({
     error: (err) => {
       console.log(err.responseJSON);
     }
-});
+});*/
 
 let updateJSONbin = function() {
 $.ajax({
@@ -149,7 +149,7 @@ setInterval(updateTodoList, 1000);
 
 let deleteTodo = function(index) {
     todoList.splice(index,1);
-    updateJSONbin();
+    //updateJSONbin();
 }
 
 let addTodo = function() {
@@ -172,7 +172,7 @@ let addTodo = function() {
     };
   //add item to the list
     todoList.push(newTodo);
-	updateJSONbin();
+	//pdateJSONbin();
 	window.localStorage.setItem("todos", JSON.stringify(todoList));
 }
 
