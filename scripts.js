@@ -79,12 +79,12 @@ let updateTodoList = function() {
 
     //add all elements
     let filterInput = document.getElementById("inputSearch"); 
-    console.log(todoList);
+	let startDate = document.getElementById("inputDateSearch").value;
+	let endDate = document.getElementById("inputEndSearch").value + "T00:00:00.000Z";
     for (let todo in todoList) {
         if (
-            (filterInput.value == "") ||
-            (todoList[todo].title.includes(filterInput.value)) ||
-            (todoList[todo].description.includes(filterInput.value)))
+            ((filterInput.value == "") ||(todoList[todo].title.includes(filterInput.value)) ||(todoList[todo].description.includes(filterInput.value)))
+			 && (todoList[todo].dueDate >= startDate && todoList[todo].dueDate <= endDate))
         {
         let newElement = document.createElement("tr");
 		let name = document.createElement("td");
@@ -131,6 +131,7 @@ setInterval(updateTodoList, 1000);
 let deleteTodo = function(index) {
     todoList.splice(index,1);
     updateJSONbin();
+	window.localStorage.setItem("todos", JSON.stringify(todoList));
 }
 
 let addTodo = function() {
