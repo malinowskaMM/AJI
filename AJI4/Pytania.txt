@@ -1,0 +1,4 @@
+Pytania:
+1. Czy price też jest zmiennoprzecinkowa?
+2. Czy category w product musi być not null?
+
