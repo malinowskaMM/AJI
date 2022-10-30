@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 var dashboardUrl = 'https://api.jsonbin.io/v3/b/6349050d0e6a79321e27f4b4';
 var masterKey = '$2b$10$xZMoZi3kWCOmCiX0gYjnH.EBDMMivLdb8fuUL3jS.69BVjYkLFvHO';
 let todoList = []; //declares a new array for Your todo list
@@ -39,7 +39,7 @@ $.ajax({
   error: (err) => {
     console.log(err.responseJSON);
   }
-})
+});
 };
 
 let updateTodoList = function() {
@@ -125,7 +125,7 @@ let updateTodoList = function() {
         todoListDiv.appendChild(newElement);
           }
     }
-}
+};
 
 //updateTodoList();
 setInterval(updateTodoList, 1000);
@@ -134,7 +134,7 @@ let deleteTodo = function(index) {
     todoList.splice(index,1);
     updateJSONbin();
 	window.localStorage.setItem("todos", JSON.stringify(todoList));
-}
+};
 
 let addTodo = function() {
   //get the elements in the form
@@ -158,7 +158,7 @@ let addTodo = function() {
     todoList.push(newTodo);
 	updateJSONbin();
 	window.localStorage.setItem("todos", JSON.stringify(todoList));
-}
+};
 
 let newDeleteButton = document.createElement("input");
         newDeleteButton.type = "button";
