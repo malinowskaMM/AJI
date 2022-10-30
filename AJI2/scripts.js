@@ -1,11 +1,13 @@
 "use strict"
+var dashboardUrl = 'https://api.jsonbin.io/v3/b/6349050d0e6a79321e27f4b4';
+var masterKey = '$2b$10$xZMoZi3kWCOmCiX0gYjnH.EBDMMivLdb8fuUL3jS.69BVjYkLFvHO';
 let todoList = []; //declares a new array for Your todo list
 $.ajax({
     // copy Your bin identifier here. It can be obtained in the dashboard
-    url: 'https://api.jsonbin.io/v3/b/6349050d0e6a79321e27f4b4',
+    url: dashboardUrl,
     type: 'GET',
     headers: { //Required only if you are trying to access a private bin
-      'X-Master-Key': '$2b$10$xZMoZi3kWCOmCiX0gYjnH.EBDMMivLdb8fuUL3jS.69BVjYkLFvHO'
+      'X-Master-Key': masterKey
     },
     success: (data) => {
     let savedList = window.localStorage.getItem("todos");
@@ -22,11 +24,11 @@ $.ajax({
 let updateJSONbin = function() {
 $.ajax({
     // wchodzisz na jsonbin.io, tworzysz nowy bin, kopiujesz jego id
-  url: 'https://api.jsonbin.io/v3/b/6349050d0e6a79321e27f4b4',
+  url: dashboardUrl,
   type: 'PUT',
   headers: { //Required only if you are trying to access a private bin
     //wklejasz swoj x-master-key
-    'X-Master-Key': '$2b$10$xZMoZi3kWCOmCiX0gYjnH.EBDMMivLdb8fuUL3jS.69BVjYkLFvHO',
+    'X-Master-Key': masterKey,
     'contentType': 'application/json'
 },
   contentType: 'application/json',
