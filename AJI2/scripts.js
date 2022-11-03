@@ -85,7 +85,8 @@ let updateTodoList = function() {
 	let endDate = document.getElementById("inputEndSearch").value + "T00:00:00.000Z";
     for (let todo in todoList) {
         if (
-            ((filterInput.value == "") ||(todoList[todo].title.includes(filterInput.value)) ||(todoList[todo].description.includes(filterInput.value)))
+            ((filterInput.value == "") ||(todoList[todo].title.toUpperCase().includes(filterInput.value.toUpperCase())) 
+			||(todoList[todo].description.toUpperCase().includes(filterInput.value.toUpperCase())))
 			 && (todoList[todo].dueDate >= startDate && todoList[todo].dueDate <= endDate))
         {
         let newElement = document.createElement("tr");
