@@ -13,8 +13,8 @@
                 <tr v-for="it in display()" v-bind:key="it">
                     <td>{{it.title}}</td>
                     <td>{{it.year}}</td>
-                    <td>{{it.cast}}</td>
-                    <td>{{it.genres}}</td>
+                    <td>{{it.cast.toString()}}</td>
+                    <td>{{it.genres.toString()}}</td>
                 </tr>
             </tbody>
         </table>
@@ -57,8 +57,6 @@ export default {
     methods: {
         showMore() {
             this.dataTableSize += 10;
-            console.log(this.dataTableSize);
-            console.log(moviesToDisplay.length);
             if(moviesToDisplay.length <= this.dataTableSize){
                 this.isButtonVisable = false;
             }

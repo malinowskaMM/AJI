@@ -1,12 +1,6 @@
 <template>
-    <div class="row">
-      <GenreMovieList
-          :jsonData="fullJsonData"
-      />
-      <ActorsMovieList
-          :jsonData="fullJsonData"
-      />
-    </div>
+      <GenreMovieList :jsonData="fullJsonData"/>
+      <ActorsMovieList :jsonData="fullJsonData"/>
   </template>
   
   <script>

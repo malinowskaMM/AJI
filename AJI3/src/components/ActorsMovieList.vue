@@ -1,19 +1,17 @@
 <template>
-    <div class="container">
-        <h1>Filmy wg obsady</h1>
-        <div class="card" v-for="(it,index) in actorsList" :key="index">
-      <div class="card-header">
-        {{it}}
+    <h1>Filmy wg obsady</h1>
+    <div class="col-sm-6 mt-5 px-4">
+    <div v-for="(actor, index) in actorsList" :key="index">
+      <div>
+        {{ actor }}
       </div>
-
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" v-for="(jt,jndex) in titleList[index]" :key="jndex">
-          {{jt.title}}
+      <ol>
+        <li v-for="(element, jndex) in titleList[index]" :key="jndex">
+          {{ element.title }}
         </li>
-      </ul>
-
+      </ol>
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -37,7 +35,8 @@ export default{
     mounted() {
         for (let it of this.actorsList) {
             this.titleList.push(_.filter(
-                this.jsonData.slice(this.jsonData.length-100, this.jsonData.length), (o) => _.includes(_.flatten(o.cast), it)))
+                this.jsonData.slice(this.jsonData.length-100, this.jsonData.length), o => 
+                _.includes(_.flatten(o.cast), it)))
         }
     },
 }

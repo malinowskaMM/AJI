@@ -106,7 +106,8 @@ let updateTodoList = function() {
 		newElement.appendChild(place);
 
         let dueDate = document.createElement("td");
-		let dueDateContent = document.createTextNode(todoList[todo].dueDate);
+        var date = new Date(todoList[todo].dueDate);
+		let dueDateContent = document.createTextNode(date.toLocaleDateString());
         dueDate.appendChild(dueDateContent);
 		newElement.appendChild(dueDate);
 
@@ -129,7 +130,7 @@ let updateTodoList = function() {
 };
 
 //updateTodoList();
-setInterval(updateTodoList, 1000);
+setInterval(updateTodoList, 3000);
 
 let deleteTodo = function(index) {
     todoList.splice(index,1);
