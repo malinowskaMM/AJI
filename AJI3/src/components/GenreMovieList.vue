@@ -6,8 +6,8 @@
         {{ genre }}
       </div>
       <ol>
-        <li v-for="(ekement, jndex) in titleList[index]" :key="jndex">
-          {{ ekement.title }}
+        <li v-for="(element, jndex) in titleList[index]" :key="jndex">
+          {{ element.title }}
         </li>
       </ol>
     </div>
