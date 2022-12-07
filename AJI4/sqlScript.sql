@@ -57,3 +57,8 @@ INSERT INTO categories (NAME) VALUES ('food');
 INSERT INTO categories (NAME) VALUES ('alcohol');
 INSERT INTO categories (NAME) VALUES ('cosmetics');
 INSERT INTO categories (NAME) VALUES ('electronics');
+INSERT INTO products (name, description, price, weight, category)
+VALUES ('onion', 'opis', 5, 5, 'alcohol');
+INSERT INTO products (name, description, price, weight, category)
+VALUES ('potato', 'opis', 5, 5, 'alcohol');
+

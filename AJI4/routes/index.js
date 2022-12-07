@@ -5,6 +5,8 @@ const IndexController = require('../controllers/IndexController');
 const ProductsController = require('../controllers/ProductsController');
 const CategoriesController = require('../controllers/CategoriesController');
 const OrderStatusController = require('../controllers/OrderStatusController');
+const OrdersController = require('../controllers/OrdersController');
+router.get('/orders', OrdersController.getAll);
 router.get('/products', ProductsController.getAll);
 router.get('/products/:id', ProductsController.getById);
 router.post('/products', ProductsController.store);
