@@ -61,4 +61,14 @@ INSERT INTO products (name, description, price, weight, category)
 VALUES ('onion', 'opis', 5, 5, 'alcohol');
 INSERT INTO products (name, description, price, weight, category)
 VALUES ('potato', 'opis', 5, 5, 'alcohol');
-
+INSERT INTO orders (approved_date, status, username, email, phone_number)
+VALUES (now() + interval '5 days', 'APPROVED', 'TheUser21', 'user@gmail.com', '754321234');
+INSERT INTO orders (approved_date, status, username, email, phone_number)
+VALUES (now() + interval '10 days', 'APPROVED', 'TheUser22', 'user2@gmail.com', '222222222');
+select * FROM order_details;
+INSERT INTO order_details (product_id, order_id, number) VALUES
+(1, 1, 5);
+INSERT INTO order_details (product_id, order_id, number) VALUES
+(2, 1, 2);
+INSERT INTO order_details (product_id, order_id, number) VALUES
+(1, 2, 1);

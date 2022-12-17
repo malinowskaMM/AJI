@@ -31,7 +31,7 @@ exports.store = (req, res) => {
 };
 
 exports.updateById = (req, res) => {
-    Product.update(req.body.product).then(
+    Product.update(req.body, req.params.id).then(
         function(product) {
             res.json(product);
         }

@@ -6,11 +6,14 @@ const ProductsController = require('../controllers/ProductsController');
 const CategoriesController = require('../controllers/CategoriesController');
 const OrderStatusController = require('../controllers/OrderStatusController');
 const OrdersController = require('../controllers/OrdersController');
+
 router.get('/orders', OrdersController.getAll);
+router.get('/orders/:id', OrdersController.updateById);
+router.get('/orders/status/:state', OrdersController.getByStatus);
 router.get('/products', ProductsController.getAll);
 router.get('/products/:id', ProductsController.getById);
 router.post('/products', ProductsController.store);
-router.put('/products', ProductsController.updateById);
+router.put('/products/:id', ProductsController.updateById);
 router.get('/categories', CategoriesController.getAll);
 router.get('/status', OrderStatusController.getAll);
 

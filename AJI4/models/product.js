@@ -22,9 +22,9 @@ module.exports.create = (product) => {
     }).save();
 };
 
-module.exports.update = (product) => {
+module.exports.update = (product, productId) => {
     return new Product({
-        id: product.id
+        id: productId
     }).save( {
             name: product.name,
             description: product.description,
