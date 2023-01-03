@@ -8,7 +8,8 @@ const OrderStatusController = require('../controllers/OrderStatusController');
 const OrdersController = require('../controllers/OrdersController');
 
 router.get('/orders', OrdersController.getAll);
-router.get('/orders/:id', OrdersController.updateById);
+router.post('/orders', OrdersController.store);
+router.patch('/orders/:id', OrdersController.updateById);
 router.get('/orders/status/:state', OrdersController.getByStatus);
 router.get('/products', ProductsController.getAll);
 router.get('/products/:id', ProductsController.getById);

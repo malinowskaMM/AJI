@@ -19,7 +19,9 @@ module.exports.create = (product) => {
         price: product.price,
         weight: product.weight,
         category: product.category
-    }).save();
+    }).save().then(function (product) {
+        return product;
+    });
 };
 
 module.exports.update = (product, productId) => {

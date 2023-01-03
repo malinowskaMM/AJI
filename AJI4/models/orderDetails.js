@@ -2,14 +2,14 @@ const bookshelf= require('../config/bookshelf');
 
 const OrderDetails = bookshelf.Model.extend({
     tableName: 'order_details',
-    Order() {
-        return this.belongsTo('Order')
-    }
 })
 
-module.exports.getAll = () => {
-    return OrderDetails.forge({'order_id': '1'}).fetch()
-        .then(function(orders) {
-            console.log(orders.toJSON());
-        });
-}
+module.exports.create = (orderDetails) => {
+    return new OrderDetails({
+        order_id: orderDetails.order_id,
+        product_id: orderDetails.product_id,
+        number: orderDetails.number,
+    }).save().then(function (orderDetails) {
+        return orderDetails;
+    });
+};

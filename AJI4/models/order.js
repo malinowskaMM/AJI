@@ -6,7 +6,7 @@ const Order = bookshelf.Model.extend({
 })
 
 module.exports.getAll = async () => {
-    let exists = await knex.select().from('orders').then(async (orders) => {
+    return await knex.select().from('orders').then(async (orders) => {
         let listOfOrders = [];
         for (let i = 0; i < orders.length; i++) {
             let listOfProducts = orders[i];
@@ -26,11 +26,10 @@ module.exports.getAll = async () => {
         }
         return listOfOrders
     });
-    return exists;
 }
 
 module.exports.getByStatus = async (status) => {
-    let exists = await knex.select().from('orders').where('status', status).then(async (orders) => {
+    return await knex.select().from('orders').where('status', status).then(async (orders) => {
         let listOfOrders = [];
         for (let i = 0; i < orders.length; i++) {
             let listOfProducts = orders[i];
@@ -50,42 +49,30 @@ module.exports.getByStatus = async (status) => {
         }
         return listOfOrders
     });
-    return exists;
 }
 
 module.exports.update = (orderStatus, orderId) => {
     return new Order({
         id: orderId
     }).save( {
-            status: orderStatus.status
+            status: orderStatus.status,
+            approved_date: new Date()
         },
         {patch: true}
     );
 }
 
+module.exports.create = (order) => {
+    return new Order({
+        approved_date: order.approved_date, status: order.status, username: order.username,
+        email: order.email,
+        phone_number: order.phone_number
+    }).save().then(function (order) {
+        return order;
+    });
+};
 
-// module.exports.getById = (id) => {
-//     return new Order({'id': id}).fetch();
-// }
-//
-// module.exports.create = (order) => {
-//     return new Order({
-//         approved_date: order.approved_date, status: order.status, username: order.username,
-//         email: order.email,
-//         phone_number: order.phone_number
-//     }).save();
-// };
-//
-// module.exports.update = (order) => {
-//     return new Order({
-//         id: order.id
-//     }).save({
-//             approved_date: order.status,
-//             status: order.status,
-//             username: order.username,
-//             email: order.email,
-//             phone_number: order.phone_number
-//         },
-//         {patch: true}
-//     );
-// }
+
+module.exports.getById = (id) => {
+    return new Order({'id': id}).fetch();
+}

@@ -52,20 +52,21 @@ CREATE TABLE public.order_details
 INSERT INTO order_status (NAME) VALUES('UNAPPROVED');
 INSERT INTO order_status (NAME) VALUES('APPROVED');
 INSERT INTO order_status (NAME) VALUES('CANCELED');
-SELECT * FROM categories;
+INSERT INTO order_status (NAME) VALUES('COMPLETED');
 INSERT INTO categories (NAME) VALUES ('food');
 INSERT INTO categories (NAME) VALUES ('alcohol');
 INSERT INTO categories (NAME) VALUES ('cosmetics');
 INSERT INTO categories (NAME) VALUES ('electronics');
 INSERT INTO products (name, description, price, weight, category)
-VALUES ('onion', 'opis', 5, 5, 'alcohol');
+VALUES ('onion', 'you will cry after this', 5, 2, 'food');
 INSERT INTO products (name, description, price, weight, category)
-VALUES ('potato', 'opis', 5, 5, 'alcohol');
+VALUES ('potato', 'sweet straight from the ground', 15, 3, 'food');
+INSERT INTO products (name, description, price, weight, category)
+VALUES ('lipstick', 'red color', 50, 1, 'cosmetics');
 INSERT INTO orders (approved_date, status, username, email, phone_number)
-VALUES (now() + interval '5 days', 'APPROVED', 'TheUser21', 'user@gmail.com', '754321234');
+VALUES (now() - interval '5 days', 'APPROVED', 'TheUser21', 'user@gmail.com', '754321234');
 INSERT INTO orders (approved_date, status, username, email, phone_number)
-VALUES (now() + interval '10 days', 'APPROVED', 'TheUser22', 'user2@gmail.com', '222222222');
-select * FROM order_details;
+VALUES (null, 'UNAPPROVED', 'TheUser22', 'user2@gmail.com', '222222222');
 INSERT INTO order_details (product_id, order_id, number) VALUES
 (1, 1, 5);
 INSERT INTO order_details (product_id, order_id, number) VALUES
