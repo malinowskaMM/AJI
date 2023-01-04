@@ -26,7 +26,7 @@ CREATE TABLE public.order_status
 CREATE TABLE public.orders
 (
     ID integer NOT NULL GENERATED ALWAYS AS IDENTITY,
-    APPROVED_DATE date,
+    APPROVED_DATE timestamp with time zone,
     STATUS text NOT NULL,
     USERNAME text NOT NULL,
     EMAIL text NOT NULL,

@@ -33,7 +33,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"kiwiio\",\r\n    \"description\":\"green fruit\",\r\n    \"price\":\"15\",\r\n    \"weight\":\"13\",\r\n    \"category\":\"alcohol\"\r\n}",
+							"raw": "{\r\n    \"name\": \"kiwi\",\r\n    \"description\": \"green fruit\",\r\n    \"price\": 33,\r\n    \"weight\": 5,\r\n    \"category\": \"food\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -59,14 +59,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/products/3232",
+							"raw": "localhost:8080/products/36",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"products",
-								"3232"
+								"36"
 							]
 						}
 					},
@@ -79,7 +79,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"orange\",\r\n    \"description\": \"orange fruit\",\r\n    \"price\": 301,\r\n    \"weight\": 5,\r\n    \"category\": \"food\"\r\n}",
+							"raw": "{\r\n    \"name\": \"kiwi\",\r\n    \"description\": \"green fruit\",\r\n    \"price\": 33,\r\n    \"weight\": 8,\r\n    \"category\": \"food\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -87,14 +87,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/products/2",
+							"raw": "localhost:8080/products/36",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"products",
-								"2"
+								"36"
 							]
 						}
 					},
@@ -173,7 +173,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"status\" : \"APPROVED\"\r\n}",
+					"raw": "{\r\n    \"status\" : \"COMPLETED\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -181,14 +181,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/orders/51",
+					"raw": "localhost:8080/orders/81",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"orders",
-						"51"
+						"81"
 					]
 				}
 			},
@@ -200,7 +200,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/orders/status/CANCELED",
+					"raw": "localhost:8080/orders/status/COMPLETED",
 					"host": [
 						"localhost"
 					],
@@ -208,7 +208,7 @@
 					"path": [
 						"orders",
 						"status",
-						"CANCELED"
+						"COMPLETED"
 					]
 				}
 			},
@@ -221,7 +221,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n        \"username\": \"Hubi\",\r\n        \"email\": \"hubert@csa.pl\",\r\n        \"phone_number\": \"697332121\",\r\n        \"products\": [\r\n            {\r\n                \"product_id\" : 3,\r\n                \"quantity\": 100\r\n            },\r\n            {\r\n                \"product_id\" : 2,\r\n                \"quantity\": 300\r\n            }\r\n        ]\r\n }",
+					"raw": " {\r\n        \"username\": \"Hubi321\",\r\n        \"email\": \"hubert@poczta.pl\",\r\n        \"phone_number\": \"697332121\",\r\n        \"products\": [\r\n            {\r\n                \"product_id\" : 2,\r\n                \"quantity\": 15\r\n            },\r\n            {\r\n                \"product_id\" : 1,\r\n                \"quantity\": 5\r\n            }\r\n        ]\r\n }",
 					"options": {
 						"raw": {
 							"language": "json"

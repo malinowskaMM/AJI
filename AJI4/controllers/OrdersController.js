@@ -34,6 +34,11 @@ exports.updateById = async (req, res) => {
             message: "Order status can not be changed backwards."
         })
     }
+    if (orderStatus === "UNAPPROVED" && req.body.status === "COMPLETED") {
+        return res.status(400).send({
+            message: "Order status must be firstly approved."
+        })
+    }
     Order.update(req.body, req.params.id).then(function () {
         return res.status(204).send()
     })
